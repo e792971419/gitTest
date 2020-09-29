@@ -10,6 +10,42 @@
 <body>
     <div>
         master 分支 
+
+        在develop分支上
+        执行了`git push -u origin develop`
+        再次执行`git push` 是可以提交代码的
+
+        测试直接在master 分支上 git push
+        测试结果成功
+
+        在设置了 git remote add origin '仓库地址'之后
+        origin 就默认记下了仓库地址
+        所以在任意分支上 可以直接git push
+
+        发现
+        在从develop分支上切换到master 分支上会再次输入用户和密码
+
+        在主分支master 上提交要输入用户和密码
+        原因可能是执行了 git push origin 分支名 (不是master分支(不是本分支))
+        本次执行git push origin master(本分支名)查看效果
+
+        执行git push origin master 之后 在master分支上使用git push 看是否需要输入用户和密码
+        效果是不需要 输入用户和密码了 看看在其他分支上 直接git push 的是否需要输入用户和密码
+        在master分支上还是得输入用户和密码
+        在执行git push origin master(之前是切换到其他分支了) 
+        再次输入用户和密码之后 git push 就不用输入用户和密码了
+        还是得输入用户和密码
+        可能是从其他分支切换到master 分支之后 就得输入用户和密码
+
+        切换到其他分支 在其他分支没有任何改动 再次切换到master分支后
+        看是否需要输入用户和密码
+        效果是不需要
+
+        切换到其他分支 在其他分支上有改动
+        看是否如需要输入用户和密码
+        好像不是切换分支后 在其他分支有或没有改动 在master分支上 过几次提交后 还是得输入用户和密码
+
+        切换到develop 分支上直接 git push 是不要输入用户和密码的
     </div>
 </body>
 
